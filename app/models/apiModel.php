@@ -15,5 +15,28 @@ use Stripe\Util\Util;
 
 class apiModel extends Model
 {
+    public function getNews()
+    {
+        $temp_chached = LocalCachedUI::getCache("last_news");
 
+        if($temp_chached != null){
+            $news = $temp_chached;
+        }
+        else{
+            $news = DataBase::Query("SELECT * FROM pages");
+            LocalCachedUI::createCached("last_news", $news, 72);
+        }
+
+        $page = isset($_POST['page']) ? $_POST['page'] : 1;
+        $itemsPerPage = $_ENV["COUNT_NEWS_IN_PAGE"];
+        
+        $startIndex = ($page - 1) * $itemsPerPage;
+        $pagedNews = array_slice($news, $startIndex, $itemsPerPage);
+        
+        Utils::sendAjaxRequest([
+            'news' => $pagedNews,
+            'totalPages' => ceil(count($news) / $itemsPerPage)
+        ]);
+
+    }
 }

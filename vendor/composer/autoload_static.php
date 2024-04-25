@@ -18,10 +18,7 @@ class ComposerStaticInitc86e3541b9438c2b419b8453e8839970
         'b710d6ad052cf7757a2aceedd561d1f2' => __DIR__ . '/../..' . '/app/core/utils.php',
         'a55ead8cbe2b92a4c9d5ab72f8add83c' => __DIR__ . '/../..' . '/app/core/validations.php',
         '2335d4c1ab23a7e12b31c68f5bc4345b' => __DIR__ . '/../..' . '/app/core/templatesData.php',
-        'c0ec4096fb775279f1f16515dd5e3471' => __DIR__ . '/../..' . '/app/interfaces/sessionInterfaces.php',
         '87930e3d13f106f4abb4d8d72da098b6' => __DIR__ . '/../..' . '/app/interfaces/localCachedInterfaces.php',
-        '33326cf540843eddc71c2661d9ac8869' => __DIR__ . '/../..' . '/app/interfaces/userInterfaces.php',
-        '259ce40066b44bcaed6a1b727f2e029e' => __DIR__ . '/..' . '/phpmailer/PHPMailerAutoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -39,7 +36,6 @@ class ComposerStaticInitc86e3541b9438c2b419b8453e8839970
         'P' => 
         array (
             'PhpOption\\' => 10,
-            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'G' => 
         array (
@@ -75,10 +71,6 @@ class ComposerStaticInitc86e3541b9438c2b419b8453e8839970
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
-        ),
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'GrahamCampbell\\ResultType\\' => 
         array (

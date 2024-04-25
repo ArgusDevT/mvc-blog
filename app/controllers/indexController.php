@@ -16,4 +16,11 @@ class indexController extends Controller
             ->view
             ->run();
     }
+
+    function page()
+    {
+        $this
+            ->view
+            ->run();
+    }
 }
