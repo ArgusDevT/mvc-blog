@@ -1,0 +1,1 @@
+[{"result":"success","trade":8707382,"rate":"97.24","commission":"6.0","card_number":"2200300135812368","amount":975.0,"usdt_amount":"9.43","support_bot":"paycheck24_bot"}]
