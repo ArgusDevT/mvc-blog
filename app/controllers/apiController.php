@@ -3,6 +3,7 @@
 namespace app\controllers;
 use app\core\Controller;
 use app\core\Utils;
+use app\core\Validations;
 
 class ApiController extends Controller
 {
@@ -21,6 +22,7 @@ class ApiController extends Controller
         switch ($method) {
 
             case "getNews":
+                Validations::getNews($_POST["page"]);
                 $this->model->getNews();
                 break;
 

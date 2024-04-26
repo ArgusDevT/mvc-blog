@@ -34,6 +34,7 @@ class apiModel extends Model
         $pagedNews = array_slice($news, $startIndex, $itemsPerPage);
         
         Utils::sendAjaxRequest([
+            'response' => true,
             'news' => $pagedNews,
             'totalPages' => ceil(count($news) / $itemsPerPage)
         ]);

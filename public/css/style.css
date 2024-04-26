@@ -1,0 +1,15 @@
+.create-date{
+    margin-top: 10px;
+    color: gray;
+    font-size: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.fixed-top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}

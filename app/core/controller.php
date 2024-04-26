@@ -41,7 +41,7 @@ class Controller
         if (class_exists($modelClass)) {
             $this->model = new $modelClass();
         } else {
-            throw new \Exception("[XINORO] Model '{$modelName}' not found");
+            throw new \Exception("Model '{$modelName}' not found");
         }
     }
 

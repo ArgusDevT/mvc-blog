@@ -14,13 +14,26 @@ class indexController extends Controller
     {
         $this
             ->view
-            ->run();
+            ->render_html([
+                "HEADER" => Utils::getTemplates("header.template")
+            ]);
     }
 
     function page()
     {
+
+        if(!isset($_GET["id"]) || empty($_GET["id"]))
+            header("Location: /");
+
+        $newsData = $this->model->getData($_GET["id"]);
+
         $this
             ->view
-            ->run();
+            ->render_html([
+                "HEADER" => Utils::getTemplates("header.template"),
+                "TITLE" => $newsData["title"],
+                "DESCRIPTION" => $newsData["description"],
+                "BODY" => $newsData["body"]
+            ]);
     }
 }
