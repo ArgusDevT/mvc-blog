@@ -18,4 +18,5 @@ return array(
     'a55ead8cbe2b92a4c9d5ab72f8add83c' => $baseDir . '/app/core/validations.php',
     '2335d4c1ab23a7e12b31c68f5bc4345b' => $baseDir . '/app/core/templatesData.php',
     '87930e3d13f106f4abb4d8d72da098b6' => $baseDir . '/app/interfaces/localCachedInterfaces.php',
+    'c0ec4096fb775279f1f16515dd5e3471' => $baseDir . '/app/interfaces/sessionInterfaces.php',
 );

@@ -21,3 +21,4 @@
 
     // Старт роутера
     Router::start();
+    SessionUI::start();

@@ -4,6 +4,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\core\Utils;
 use app\core\Validations;
+use app\interfaces\SessionUI;
 
 class ApiController extends Controller
 {
@@ -22,8 +23,21 @@ class ApiController extends Controller
         switch ($method) {
 
             case "getNews":
-                Validations::getNews($_POST["page"]);
+                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::pageExists($_POST["page"]);
                 $this->model->getNews();
+                break;
+
+            case "createComment":
+                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::createComment($_POST["name"], $_POST['comment']);
+                $this->model->createComment($_POST["page"], $_POST["name"], $_POST['comment']);
+                break;
+
+            case "getComments":
+                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::getComments($_POST["page"], $_POST["idPage"]);
+                $this->model->getComments();
                 break;
 
             default:

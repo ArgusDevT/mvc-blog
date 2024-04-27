@@ -11,6 +11,6 @@ function showAlert(message, alertType, duration) {
     $('#alertContainer').html(alertElement);
 
     setTimeout(function() {
-        $('.alert').alert('close'); // Закрываем alert
+        $('.alert').alert('close');
     }, duration);
 }

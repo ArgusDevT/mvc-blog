@@ -12,7 +12,8 @@
             "app/core/utils.php",
             "app/core/validations.php",
             "app/core/templatesData.php",
-            "app/interfaces/localCachedInterfaces.php"
+            "app/interfaces/localCachedInterfaces.php",
+            "app/interfaces/sessionInterfaces.php"
         ]
     },
     "require": {

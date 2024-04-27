@@ -11,6 +11,7 @@ class Router
         $routes = [
             'index' => ['controller' => 'indexController', 'model' => "index", 'action' => 'index'],
             'page' => ['controller' => 'indexController', 'model' => "index", 'action' => 'page'],
+            'apanel' => ['controller' => 'adminController', 'model' => "admin", 'action' => 'apanel'],
             'api/v1' => ['controller' => 'apiController', 'model' => "api", 'action' => 'v1'],
         ];
 

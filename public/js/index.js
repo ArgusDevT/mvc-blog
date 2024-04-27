@@ -4,7 +4,8 @@ function loadNews(page) {
       type: "POST",
       data: {
           page: page,
-          method: "getNews"
+          method: "getNews",
+          crsf_token: crsf_token
       },
       success: function(response) {
           if(response.response == true){
