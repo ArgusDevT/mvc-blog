@@ -108,4 +108,70 @@ class apiModel extends Model
             ]);
         }
     }
+
+    public function createNews($title, $description, $body){
+        DataBase::QueryUpd("INSERT INTO pages(title, description, body, date) VALUES(?,?,?,?)",[
+            $title,
+            $description,
+            $body,
+            date('Y-m-d H:i:s')
+        ]);
+        LocalCachedUI::clearChached([
+            "last_news"
+        ]);
+
+        $this->getNews();
+
+        Utils::sendAjaxRequest([
+            'response' => true
+        ]);
+    }
+
+    public function deleteNews($delid){
+        DataBase::QueryUpd("DELETE FROM pages WHERE id = ?", [
+            $delid
+        ]);
+
+        LocalCachedUI::clearChached([
+            "last_news"
+        ]);
+
+        $this->getNews();
+        
+        Utils::sendAjaxRequest([
+            'response' => true
+        ]);
+    }
+
+    public function saveNews($title, $description, $body, $id){
+        DataBase::QueryUpd("UPDATE pages SET title = ?, description = ?, body = ? WHERE id = ?", [
+            $title,
+            $description,
+            $body,
+            $id
+        ]);
+
+        LocalCachedUI::clearChached([
+            "last_news"
+        ]);
+
+        $this->getNews();
+        
+        Utils::sendAjaxRequest([
+            'response' => true
+        ]);
+    }
+
+    public function getEditNews($id){
+        $data = DataBase::Query("SELECT * FROM pages WHERE id = ?", [
+            $id
+        ])[0];
+
+        Utils::sendAjaxRequest([
+            'response' => true,
+            'title' => $data["title"],
+            'description' => $data["description"],
+            "body" => $data["body"]
+        ]);
+    }
 }

@@ -33,27 +33,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="createArticleModalLabel">Создать новую статью</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="title" class="form-label">Название:</label>
-            <input type="text" class="form-control" id="title">
+            <label for="create_title" class="form-label">Название:</label>
+            <input type="text" class="form-control" id="create_title">
           </div>
           <div class="mb-3">
-            <label for="description" class="form-label">Описание:</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <label for="create_description" class="form-label">Описание:</label>
+            <textarea class="form-control" id="create_description" rows="3"></textarea>
           </div>
           <div class="mb-3">
-            <label for="body" class="form-label">Содержание:</label>
-            <textarea class="form-control" id="body" rows="5"></textarea>
+            <label for="create_body" class="form-label">Содержание:</label>
+            <textarea class="form-control" id="create_body" rows="5"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-primary">Создать</button>
+        <button type="button" class="btn btn-primary" id="create_news" data-bs-dismiss="modal">Создать</button>
       </div>
     </div>
   </div>
@@ -63,27 +62,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editArticleModalLabel">Редактировать статью</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <label for="editTitle" class="form-label">Название:</label>
-            <input type="text" class="form-control" id="editTitle">
+            <label for="save_title" class="form-label">Название:</label>
+            <input type="text" class="form-control" id="save_title">
           </div>
           <div class="mb-3">
-            <label for="editDescription" class="form-label">Описание:</label>
-            <textarea class="form-control" id="editDescription" rows="3"></textarea>
+            <label for="save_description" class="form-label">Описание:</label>
+            <textarea class="form-control" id="save_description" rows="3"></textarea>
           </div>
           <div class="mb-3">
-            <label for="editBody" class="form-label">Содержание:</label>
-            <textarea class="form-control" id="editBody" rows="5"></textarea>
+            <label for="save_body" class="form-label">Содержание:</label>
+            <textarea class="form-control" id="save_body" rows="5"></textarea>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+        <button type="button" class="btn btn-primary" id="save_news" data-bs-dismiss="modal">Сохранить изменения</button>
       </div>
     </div>
   </div>
@@ -93,14 +91,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="deleteArticleModalLabel">Удалить статью</h5>
-        <button type="button" class="btn-close" id="delete_button" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>Вы уверены, что хотите удалить эту статью?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-danger">Удалить</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-dismiss="modal">Отмена</button>
+        <button type="button" id="delete_button" data-bs-dismiss="modal" class="btn btn-danger">Удалить</button>
       </div>
     </div>
   </div>

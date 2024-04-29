@@ -26,6 +26,51 @@ class Validations
             ]);
     }
 
+    static function deleteNews($delid)
+    {
+        if(empty($delid) || !isset($delid))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => '$delid not found'
+            ]);
+    }
+
+    static function getEditNews($id)
+    {
+        if(empty($id) || !isset($id))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => '$id not found'
+            ]);
+    }
+
+    static function saveNews($title, $description, $body, $id){
+
+        if(empty($id) || !isset($id))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => '$id not found'
+            ]);
+
+        if(empty($title) || !isset($title))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Название статьи не может быть пустым'
+            ]);
+        
+        if(empty($description) || !isset($description))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Описание не может быть пустым'
+            ]);
+
+        if(empty($body) || !isset($body))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Тело статьи не может быть пустым'
+            ]);
+    }
+
     static function pageExists($page)
     {
         if(empty($page) || !isset($page))
@@ -62,6 +107,27 @@ class Validations
             Utils::sendAjaxRequest([
                 'response' => false,
                 'error' => 'Пароль не может быть пустым'
+            ]);
+    }
+
+    static function createNews($title, $description, $body)
+    {
+        if(empty($title) || !isset($title))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Название статьи не может быть пустым'
+            ]);
+        
+        if(empty($description) || !isset($description))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Описание не может быть пустым'
+            ]);
+
+        if(empty($body) || !isset($body))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Тело статьи не может быть пустым'
             ]);
     }
 
