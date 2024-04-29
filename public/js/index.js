@@ -1,7 +1,7 @@
 function loadNews(page) {
   $.ajax({
       url: "api/v1",
-      type: "POST",
+      type: "GET",
       data: {
           page: page,
           method: "getNews",

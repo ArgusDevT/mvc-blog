@@ -33,7 +33,7 @@ function loadComents(page) {
 
     $.ajax({
         url: "api/v1",
-        type: "POST",
+        type: "GET",
         data: {
             page: page,
             idPage: params.get("id"),

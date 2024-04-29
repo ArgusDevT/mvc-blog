@@ -50,6 +50,21 @@ class Validations
             ]);
     }
 
+    static function login($username, $password)
+    {
+        if(empty($username) || !isset($username))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Логин не может быть пустым'
+            ]);
+        
+        if(empty($password) || !isset($password))
+            Utils::sendAjaxRequest([
+                'response' => false,
+                'error' => 'Пароль не может быть пустым'
+            ]);
+    }
+
     static function createComment($name, $comment)
     {
         if(empty($name) || !isset($name))

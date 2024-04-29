@@ -11,20 +11,20 @@ class indexController extends Controller
 
     function index()
     {
-        // SessionUI::set("CRSF_TOKEN", bin2hex(random_bytes(32)));
+        SessionUI::set("CRSF_TOKEN", bin2hex(random_bytes(32)));
 
         $this
             ->view
             ->render_html([
                 "HEADER" => Utils::getTemplates("header.template"),
-                // "CRSF_TOKEN" => SessionUI::get("CRSF_TOKEN")
+                "CRSF_TOKEN" => SessionUI::get("CRSF_TOKEN")
             ]);
     }
 
     function page()
     {
 
-        // SessionUI::set("CRSF_TOKEN", bin2hex(random_bytes(32)));
+        SessionUI::set("CRSF_TOKEN", bin2hex(random_bytes(32)));
 
         if(!isset($_GET["id"]) || empty($_GET["id"]))
             header("Location: /");
@@ -38,7 +38,7 @@ class indexController extends Controller
                 "TITLE" => $newsData["title"],
                 "DESCRIPTION" => $newsData["description"],
                 "BODY" => $newsData["body"],
-                // "CRSF_TOKEN" => SessionUI::get("CRSF_TOKEN")
+                "CRSF_TOKEN" => SessionUI::get("CRSF_TOKEN")
             ]);
     }
 }

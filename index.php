@@ -20,5 +20,5 @@
     $dotenv->load();
 
     // Старт роутера
-    Router::start();
     SessionUI::start();
+    Router::start();

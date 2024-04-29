@@ -12,32 +12,38 @@ class ApiController extends Controller
 
     public function v1()
     {
-        if (!isset($_POST["method"]) || empty($_POST["method"])) {
+        $method = $_POST["method"] != null ? $_POST["method"] : $_GET["method"];
+        if (!isset($method) || empty($method)) {
             Utils::sendAjaxRequest([
                 "response" => false,
                 "error" => "Method not specified"
             ]);
         }
 
-        $method = $_POST["method"];
         switch ($method) {
 
             case "getNews":
-                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
-                Validations::pageExists($_POST["page"]);
+                Validations::crsf($_GET["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::pageExists($_GET["page"]);
                 $this->model->getNews();
                 break;
 
             case "createComment":
-                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
                 Validations::createComment($_POST["name"], $_POST['comment']);
                 $this->model->createComment($_POST["page"], $_POST["name"], $_POST['comment']);
                 break;
 
             case "getComments":
-                // Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
-                Validations::getComments($_POST["page"], $_POST["idPage"]);
+                Validations::crsf($_GET["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::getComments($_GET["page"], $_GET["idPage"]);
                 $this->model->getComments();
+                break;
+
+            case "login":
+                Validations::crsf($_POST["crsf_token"], SessionUI::get("CRSF_TOKEN"));
+                Validations::login($_POST["username"], $_POST["password"]);
+                $this->model->login($_POST["username"], $_POST["password"]);
                 break;
 
             default:
