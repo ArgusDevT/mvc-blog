@@ -16,9 +16,9 @@ PORT = '3306'
 ```
 # База данных
 HOST = 'mysql'
-USER = 'root'
-PASSWORD = ''
-BASENAME = 'test'
+USER = 'admin'
+PASSWORD = 'admin'
+BASENAME = 'admin'
 PORT = '3306'
 
 ```
