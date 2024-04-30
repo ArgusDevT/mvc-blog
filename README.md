@@ -10,16 +10,30 @@ PASSWORD = ''
 BASENAME = 'test'
 PORT = '3306'
 
+# Chached
+CACHED_FOLDER = 'public/cached/'
+
+# SETTINGS
+COUNT_NEWS_IN_PAGE = 3
+COUNT_COMMENT_IN_PAGE = 3
+
 ```
 
 # Запуск докер
 ```
 # База данных
 HOST = 'mysql'
-USER = 'root'
-PASSWORD = ''
-BASENAME = 'test'
+USER = 'admin'
+PASSWORD = 'admin'
+BASENAME = 'admin'
 PORT = '3306'
+
+# Chached
+CACHED_FOLDER = 'public/cached/'
+
+# SETTINGS
+COUNT_NEWS_IN_PAGE = 3
+COUNT_COMMENT_IN_PAGE = 3
 
 ```
 ``` Меняем данные в .evn под себя и пишем ```
