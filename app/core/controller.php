@@ -37,7 +37,7 @@ class Controller
 
     protected function loadModel($modelName)
     {
-        $modelClass = 'app\\models\\' . ucfirst($modelName) . 'Model';
+        $modelClass = 'app\\models\\' . $modelName . 'Model';
         if (class_exists($modelClass)) {
             $this->model = new $modelClass();
         } else {
