@@ -9,18 +9,18 @@ services:
       - .:/var/www/html
     environment:
       - DATABASE_HOST=mysql
-      - DATABASE_NAME=test
-      - DATABASE_USER=root
-      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=admin
+      - DATABASE_USER=admin
+      - DATABASE_PASSWORD=admin
       - DATABASE_PORT=3306
 
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: test
-      MYSQL_DATABASE: test
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: admin
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
       MYSQL_PORT: 3306
     ports:
       - "3306:3306"
